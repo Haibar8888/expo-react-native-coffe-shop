@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View, Image,TouchableOpacity, ImageBackground } from 'react-native'
 import React from 'react'
-import { BackgroundSpalash,ImageSplashScreen } from '../../assets/images'
+import { BackgroundSpalash, ImageSplashScreen } from '../../assets/images'
+import { useNavigation } from '@react-navigation/native';
 
 const SplashScreen = () => {
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       <ImageBackground source={BackgroundSpalash} style={styles.backgroundSpalash}>
@@ -19,7 +22,7 @@ const SplashScreen = () => {
                 The best grain, the finest roas, the most powerful flavor.
               </Text>
           </View>
-            <TouchableOpacity style={styles.button} onPress={() => console.log('home menu')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                 <Text style={{ color: 'white', fontSize: 18 }}>Get Started</Text>
             </TouchableOpacity>
         </ImageBackground>
