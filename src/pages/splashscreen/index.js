@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
-  
+
   return (
     <View style={styles.container}>
       <ImageBackground source={BackgroundSpalash} style={styles.backgroundSpalash}>
@@ -22,7 +22,7 @@ const SplashScreen = () => {
                 The best grain, the finest roas, the most powerful flavor.
               </Text>
           </View>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MyTabs')}>
                 <Text style={{ color: 'white', fontSize: 18 }}>Get Started</Text>
             </TouchableOpacity>
         </ImageBackground>
