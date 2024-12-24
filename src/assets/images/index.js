@@ -5,6 +5,8 @@ import UserIcon from './user_icon.png'
 import LocationIcon from './location_icon.png'
 import SettingIcon from './setting_icon.png'
 import SearchingIcon from './search_icon.png'
+import CoffeeIcon from './coffee_icon.png'
+import CoffeeIconGreen from './coffe_green_icon.png'
 
 export {
     BackgroundSpalash,
@@ -13,5 +15,7 @@ export {
     NotificationIcon,
     LocationIcon,
     SettingIcon,
-    SearchingIcon
+    SearchingIcon,
+    CoffeeIcon,
+    CoffeeIconGreen
 }

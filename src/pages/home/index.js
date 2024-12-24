@@ -1,11 +1,34 @@
-import { StyleSheet, Text, View,Image,TouchableOpacity,TextInput } from 'react-native'
+import { StyleSheet, Text, View,Image,TouchableOpacity,TextInput,ScrollView } from 'react-native'
 import React,{ useRef } from 'react'
-import { UserIcon, NotificationIcon, LocationIcon, SearchingIcon, SettingIcon } from '../../assets/images'
+import { UserIcon, NotificationIcon, LocationIcon, SearchingIcon, SettingIcon,CoffeeIcon,CoffeeIconGreen } from '../../assets/images'
 
-
+const CategoriesProduct = ({children,isActive}) => {
+  if (isActive) {
+    return (
+      <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 105, height: 33, backgroundColor: '#00582F', paddingHorizontal: 13, paddingVertical: 6, borderRadius: 30, marginHorizontal: 1, }}>
+        <Image source={CoffeeIcon} style={{ width: 14, height: 14, marginRight: 3 }} />
+        <Text style={{ fontSize: 10, color: 'white', fontWeight: 'bold ' }}>{children}</Text>
+      </TouchableOpacity>
+    )
+  } else {
+    return (
+      <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 105, height: 33, backgroundColor: '#FFFFFF', paddingHorizontal: 13, paddingVertical: 6, borderRadius: 30, marginHorizontal: 1,  shadowColor: '#000', // Color of the shadow
+      shadowOffset: {
+          width: 2, // Horizontal offset
+          height: 5, // Vertical offset
+        },
+      shadowOpacity: 0.3, // Increased opacity for a more pronounced shadow
+      shadowRadius: 6,    // Increased blur radius for a softer shadow
+      // Shadow property for Android
+      elevation: 8,}}>
+        <Image source={CoffeeIconGreen} style={{ width: 14, height: 14, marginRight: 3,color: '#00582F' }} />
+        <Text style={{ fontSize: 10, color: '#00582F', fontWeight: 'bold ' }}>{children}</Text>
+      </TouchableOpacity>
+    )
+  }
+}
 
 const Home = () => {
-
   const searchInputRef = useRef(null);
 
   return (
@@ -48,15 +71,23 @@ const Home = () => {
         </TouchableOpacity>
       </View>
       {/* searching end */}
+
       {/* categories */}
-       {/* title */}
       <View>
         <Text style={{ fontSize: 14,fontWeight: 'bold',marginVertical: 15,marginHorizontal: 30 }}>
           Categories
         </Text>
       </View>
-      {/* title end */}
       {/* categories end */}
+
+      {/* categories product */}
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
+          <CategoriesProduct isActive={true}>Coffee</CategoriesProduct>
+          <CategoriesProduct>Cappucino</CategoriesProduct>
+          <CategoriesProduct>Hot Tea</CategoriesProduct>
+          <CategoriesProduct>Ice Tea</CategoriesProduct>
+      </ScrollView>
+      {/* categories product end */}
     </View>
   )
 }
@@ -68,5 +99,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     marginVertical: '24px',
+  },
+  scrollView: {
+    marginLeft: 30
   }
 })
