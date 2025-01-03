@@ -7,6 +7,8 @@ import SettingIcon from './setting_icon.png'
 import SearchingIcon from './search_icon.png'
 import CoffeeIcon from './coffee_icon.png'
 import CoffeeIconGreen from './coffe_green_icon.png'
+import CoffeeImg from './coffee_img.png'
+import AddIcon from './add_icon.png'
 
 export {
     BackgroundSpalash,
@@ -17,5 +19,7 @@ export {
     SettingIcon,
     SearchingIcon,
     CoffeeIcon,
-    CoffeeIconGreen
+    CoffeeIconGreen,
+    CoffeeImg,
+    AddIcon
 }
